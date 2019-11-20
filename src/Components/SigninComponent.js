@@ -33,7 +33,6 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className="signinBody">         
-     
       <div className="admin">
       <form>
           <h3>Admin Login</h3>
