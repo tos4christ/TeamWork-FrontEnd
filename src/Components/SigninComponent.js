@@ -1,5 +1,5 @@
 import React from 'react';
-import './SignIn.css';
+import './css/SignIn.css';
 
 class SignIn extends React.Component {
 
@@ -38,11 +38,11 @@ class SignIn extends React.Component {
           <h3>Admin Login</h3>
           <label>
             <p>Email</p>
-            <input type="email"></input>
+            <input type="email" placeholder="type your email...."></input>
           </label>
           <label>
             <p>Password</p>
-            <input type="password"></input>
+            <input type="password" placeholder="type your password...."></input>
           </label><br/>
           <label>
             <input type="submit" />
@@ -54,11 +54,11 @@ class SignIn extends React.Component {
           <h3>Employee Login</h3>
           <label>
             <p>Email</p>
-            <input type="email"></input>
+            <input type="email" placeholder="type your email...."></input>
           </label>
           <label>
             <p>Password</p>
-            <input type="password"></input>
+            <input type="password" placeholder="type your password...."></input>
           </label><br/>
           <label>
             <input type="submit" />

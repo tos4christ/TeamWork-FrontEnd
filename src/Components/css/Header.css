@@ -1,0 +1,48 @@
+header,
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+}
+.headerText {
+  text-align: left;
+  font-size: 2em;
+  padding: 0;
+  margin: auto;
+}
+.main-nav li a {
+  display: inline-block;
+  text-align: justify;
+  margin: auto;
+  padding: 2em;
+  border: 2px solid transparent;
+  height: 100%;
+}
+.main-nav li {
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+}
+.main-nav {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.active {
+  background-color: rgb(113, 36, 202);
+  color: #fff;
+}
+.icn-logo {
+  margin-right: auto;
+  padding: 2em;
+  background: #54606b;
+  color: #fff;
+}
+.main-nav li a:hover {
+  background-color: rgb(113, 36, 202);
+  color: #fff;
+}

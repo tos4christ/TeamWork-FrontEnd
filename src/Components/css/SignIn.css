@@ -20,17 +20,24 @@ img {
 
 .signinBody {
   padding: 100px 20px;
-  height: 200px;
+  height: 250px;
+  background-color: lavender;
 }
 
 input {
-  padding: 5px;
+  padding: 7px;
+  border-radius: 5px;
+  width: 70%;
+  border: blueviolet 1px solid;
 }
 
 input[type="submit"] {
   margin: 10px 0px;
   padding: 8px;
-  color: orangered;
+  color: white;
+  background: blueviolet;
+  border: none;
+  width: auto;
 }
 
 .admin {
@@ -38,13 +45,14 @@ input[type="submit"] {
   width: 30%;
   background-color: burlywood;
   margin-left: 50px;
+  background-color: white;
 }
 
 .employee {
   float: left;
   width: 30%;
   margin-left: 350px;
-  background-color: burlywood;
+  background-color: white;
 }
 
 form {
