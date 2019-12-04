@@ -1,0 +1,12 @@
+.homepage {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column-reverse;
+  
+}
+.homepage div {
+  padding: 4em;
+}
+.employee-dashboard {
+  margin: 0 20px;
+}

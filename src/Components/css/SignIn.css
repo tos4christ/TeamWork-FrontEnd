@@ -1,9 +1,8 @@
 img {
   width: 200px;
   height: 200px;
-  animation: rotation 10s infinite linear;
+  /** animation: rotation 10s infinite linear; **/
 }
-
 @keyframes rotation {
     from {
       transform: rotate(0deg);
@@ -12,51 +11,85 @@ img {
       transform: rotate(359deg);
     }
 }
-
-.todo {
-  text-align: justify;
-  color: blueviolet;
-}
-
 .signinBody {
-  padding: 100px 20px;
-  height: 250px;
-  background-color: lavender;
+  height: auto;
+  width: auto;
+  background-color: white;
+  color: white;
 }
-
+form label input {
+  margin-bottom: 20px;
+  padding: 10px;
+}
 input {
-  padding: 7px;
+  padding: 10px;
   border-radius: 5px;
   width: 70%;
   border: blueviolet 1px solid;
 }
-
 input[type="submit"] {
   margin: 10px 0px;
-  padding: 8px;
+  padding: 10px;
   color: white;
   background: blueviolet;
   border: none;
   width: auto;
 }
-
-.admin {
-  float: left;
-  width: 30%;
-  background-color: burlywood;
-  margin-left: 50px;
-  background-color: white;
+input[type="radio"] {
+  margin: 15px 10px 15px 5px;
+  color: white;
+  display: inline;
+  border: none;
+  width: auto;
 }
-
-.employee {
-  float: left;
-  width: 30%;
-  margin-left: 350px;
-  background-color: white;
+label span {
+  margin-right: 100px;
 }
-
 form {
-  float: right;
-  width: 80%;
-  padding: 20px;;
+  margin: 30px 200px;
+  width: 70%;
+  padding: 20px 150px;
+  background: rgb(155, 95, 132);
+  border-radius: 5px;
+  color: white;
+}
+.rule {
+  border-bottom: 1px solid lightgray;
+}
+.dashboard {
+  padding: 0 10px;
+  display: inline-flex;
+  margin: 0;
+  width: 100%;
+}
+.dashhead {
+  padding-left: 30px;
+  margin: 10px 0 0 0;
+}
+.dashboard button {
+  border: none;
+  margin: 10px;
+  background: yellowgreen;
+  border-radius: 4px;
+}
+.dashboard span:nth-child(2) {
+  font-size: 14px;
+  padding: 0;
+  font-family: serif;
+}
+.dashboard .active i {
+  background: white;
+  color: purple;
+}
+.material-icons.md-10 {
+  font-size: 17px;
+  margin-top: 5px;
+  margin-right: 2px;
+  color: white;
+}
+.dashboard button span:nth-child(2) {
+  font-family: sans-serif;
+  color: white;
+  margin-bottom: 5px;
+  display: inline-flex;
 }

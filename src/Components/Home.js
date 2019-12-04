@@ -1,25 +1,33 @@
 import React from 'react';
-import './css/Header.css';
-import {NavLink, Route} from 'react-router-dom';
+import { Route, Redirect} from 'react-router-dom';
+import './css/Home.css';
+import { withRouter } from 'react-router';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      logged: 'Sign-in'
+      logged: 'Sign-in',
+      route: '/'
     }
   }
 
+  componentDidMount() {
+    this.headerStateChange(this.state.route, this.state.logged)
+  }
+  headerStateChange = (route, logged) => {
+    this.props.headerState(route, logged);
+  }
   render() {
-    return (
-      <div>
-  
-        <h1>This is the Home Page</h1>
+    return (  
+      <div className='homepage'>
+         
+          <Route path='/' render={() => <Redirect to='/signin' />} />
+        
       </div>
-
     );
   }
 
 }
 
-export default Home;
+export default withRouter(Home);

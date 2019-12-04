@@ -3,12 +3,6 @@ import './css/Header.css';
 import {NavLink} from 'react-router-dom';
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      logged: 'Sign-in'
-    }
-  }
 
   render() {
     return (
@@ -19,7 +13,7 @@ class Header extends React.Component {
           <li> <NavLink to='/feeds'>Recent Posts</NavLink></li>
           <li><NavLink to='/articles'> Post Articles </NavLink></li>
           <li><NavLink to='/gifs'>Post Gifs</NavLink></li>
-          <li><NavLink to={`/${this.state.logged}`}>{this.state.logged}</NavLink></li>
+          <li><NavLink to={this.props.route}>{this.props.logged}</NavLink></li>
         </ul>
       </header>
 
