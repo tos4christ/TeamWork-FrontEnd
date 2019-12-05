@@ -22,7 +22,7 @@ class Home extends React.Component {
     return (  
       <div className='homepage'>
          
-          <Route path='/' render={() => <Redirect to='/signin' />} />
+          <Route path='/api/v1' render={() => <Redirect to='/api/v1/auth/signin' />} />
         
       </div>
     );

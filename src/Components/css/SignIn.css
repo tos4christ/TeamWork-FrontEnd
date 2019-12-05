@@ -57,7 +57,7 @@ form {
   border-bottom: 1px solid lightgray;
 }
 .dashboard {
-  padding: 0 10px;
+  padding: 0 10px 10px 10px;
   display: inline-flex;
   margin: 0;
   width: 100%;
@@ -92,4 +92,5 @@ form {
   color: white;
   margin-bottom: 5px;
   display: inline-flex;
+  
 }

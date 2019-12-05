@@ -1,36 +1,14 @@
 import React from 'react';
 import './css/SignIn.css';
 import {withRouter} from 'react-router';
+import ls from 'local-storage';
 
 class SignIn extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       token: ''
     }
-  }
-  componentDidMount() {
-    // fetch("https://teamworksng.herokuapp.com/test")
-    //   .then(res => res.json())
-    //   .then(
-    //     (result) => {
-    //       console.log( 'the result' ,result);
-    //       this.setState({
-    //         isLoaded: true,
-    //         items: result
-    //       });
-    //     },
-    //     // Note: it's important to handle errors here
-    //     // instead of a catch() block so that we don't swallow
-    //     // exceptions from actual bugs in components.
-    //     (error) => {
-    //       this.setState({
-    //         isLoaded: true,
-    //         error
-    //       });
-    //     }
-    //   )
   }
   handleSubmission = (e) => {
     e.preventDefault();
@@ -46,31 +24,21 @@ class SignIn extends React.Component {
     })
     .then((res) => res.json())
     .then((result) => {
-      console.log(result, 'the result');
-      this.setState((prevState) => {
-        prevState.token = result.data.token;
-        return {
-          token: prevState.token
-        }
-      });
-      this.setToken(this.state.token);
-      if(this.admin.value) {
-        this.props.history.push('/admin');
-      } else if(this.emp.value) {
-        this.props.history.push('/employee');
-      }
-      
+      this.setToken(result.data.token, result.data.userId);
+      if(this.admin.checked) {
+        this.props.history.push('/api/v1/admin');
+      } else if(this.emp.checked) {
+        this.props.history.push('/api/v1/employee');
+      } 
     })
     .catch(e => console.error(e))
   }
-  setToken = (token) => {
-    this.props.token(token);
+  setToken = (token, userId) => {
+    ls.set('token', token);
+    ls.set('userId', userId)
   }
   render() {
-    // console.log(this, 'signin');
-    // if(this.state.token) {
-    //   return <Redirect to='/admin' />;
-    // }
+
     return (
       <div className="signinBody"> 
         <form onSubmit={this.handleSubmission}>

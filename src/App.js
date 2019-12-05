@@ -7,17 +7,25 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './Components/Home';
 import SignIn from './Components/SignInComponent';
 import Employee from './Components/Employee';
+import ls from 'local-storage';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      route: '/',
+      route: '/api/v1',
       logged: 'Login',
       token: ''
     }
   }
-
+  componentDidMount() {
+    this.setState((prevState) => {
+      prevState.token = ls.get('token');
+      return {
+        token: prevState.token
+      }
+    })
+  }
   adjustState = (route, logged) => {
     this.setState((prevState) => {
       prevState.route = route;
@@ -28,15 +36,6 @@ class App extends React.Component {
       }
     })
   }
-  setToken = (token) => {
-    this.setState((prevState) => {
-      prevState.token = token;
-      return {
-        token: prevState.token
-      }
-    })
-  }
-
   render() {
     return (
       <Router>
@@ -44,10 +43,10 @@ class App extends React.Component {
           <Header route={this.state.route} logged={this.state.logged} />
         
           <Switch >
-            <Route exact path='/' render={() => <Home headerState={this.adjustState} /> }  />
-            <Route exact path='/signin' render={() => <SignIn token={this.setToken} /> }  />
-            <Route path='/admin' render={() => <Admin headerState={this.adjustState} token={this.state.token} />} />          
-            <Route path='/employee' render={ () => <Employee />} />
+            <Route exact path='/api/v1' render={() => <Home headerState={this.adjustState} /> }  />
+            <Route exact path='/api/v1/auth/signin' render={() => <SignIn token={this.setToken} /> }  />
+            <Route path='/api/v1/admin' render={() => <Admin headerState={this.adjustState} token={this.state.token} />} />          
+            <Route path='/api/v1/employee' render={ () => <Employee token={this.state.token} />} />
           </Switch>
           
           <Footer />

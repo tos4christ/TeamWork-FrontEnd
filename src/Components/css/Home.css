@@ -7,6 +7,82 @@
 .homepage div {
   padding: 4em;
 }
-.employee-dashboard {
-  margin: 0 20px;
+.employee-dashboard h3 {
+  padding: 0 20px;
+}
+.articlePost input{
+  width: 30em;
+  display: block;
+  margin: 0 0 10px 0;
+}
+.articlePost textarea {
+  border: 1px solid blueviolet;
+  border-radius: 5px;
+}
+.hidden {
+  display: none;
+}
+.seen {
+  display: inline-flex;
+}
+.gifPost {
+  padding: 20px 50px;
+}
+.icons i {
+  display: inline-flex;
+  padding: 0 15px;
+}
+.icons {
+  margin-left: 60px;
+  width: fit-content;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.icons span {
+  border: thistle 1px ridge;
+  background: cyan;
+}
+.articlePost {
+  padding: 20px 50px;
+}
+.button {
+  padding: 10px;
+  color: white;
+  background: blueviolet;
+  margin: 10px;
+  border: none;
+  border-radius: 3px;
+}
+.article h2 {
+  margin: 10px 60px;
+  border-bottom: 1px ridge pink;
+  color: cyan;
+}
+.article p {
+  padding: 5px 20px;
+  display: flex;
+  margin: 20px 50px;
+  width: 50em;
+}
+.article {
+  background: none;
+  margin-top: 5px;
+}
+.article-container {
+  background: white;
+  margin: 10px 20px;
+}
+.commentDiv {
+  display: block;
+  width: 60em;
+  margin-left: 100px;
+  background: rgb(167, 171, 187);
+  border-radius: 5px;
+}
+.flag {
+  color: red;
+}
+.articles {
+  background: rgb(223, 209, 209);
+  padding: 2px;
 }
