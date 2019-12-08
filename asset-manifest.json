@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/tos4christ/TeamWork-FrontEnd/tree/gh-pages/static/css/main.24c006b2.chunk.css",
+    "main.js": "/tos4christ/TeamWork-FrontEnd/tree/gh-pages/static/js/main.7035362d.chunk.js",
+    "main.js.map": "/tos4christ/TeamWork-FrontEnd/tree/gh-pages/static/js/main.7035362d.chunk.js.map",
+    "runtime-main.js": "/tos4christ/TeamWork-FrontEnd/tree/gh-pages/static/js/runtime-main.8ca28caa.js",
+    "runtime-main.js.map": "/tos4christ/TeamWork-FrontEnd/tree/gh-pages/static/js/runtime-main.8ca28caa.js.map",
+    "static/js/2.3d635975.chunk.js": "/tos4christ/TeamWork-FrontEnd/tree/gh-pages/static/js/2.3d635975.chunk.js",
+    "static/js/2.3d635975.chunk.js.map": "/tos4christ/TeamWork-FrontEnd/tree/gh-pages/static/js/2.3d635975.chunk.js.map",
+    "index.html": "/tos4christ/TeamWork-FrontEnd/tree/gh-pages/index.html",
+    "precache-manifest.13441d39dbc68a78a600b07707170317.js": "/tos4christ/TeamWork-FrontEnd/tree/gh-pages/precache-manifest.13441d39dbc68a78a600b07707170317.js",
+    "service-worker.js": "/tos4christ/TeamWork-FrontEnd/tree/gh-pages/service-worker.js",
+    "static/css/main.24c006b2.chunk.css.map": "/tos4christ/TeamWork-FrontEnd/tree/gh-pages/static/css/main.24c006b2.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ca28caa.js",
+    "static/js/2.3d635975.chunk.js",
+    "static/css/main.24c006b2.chunk.css",
+    "static/js/main.7035362d.chunk.js"
+  ]
+}
