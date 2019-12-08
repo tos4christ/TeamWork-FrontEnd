@@ -13,6 +13,7 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
+    console.log('again')
     if (ls.get('token')) {
       this.setState((prevState) => {
         prevState.headerState = 'Sign Out';

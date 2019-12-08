@@ -12,7 +12,8 @@ class Article extends React.Component {
       flag: '',
       commentClass: 'hidden',
       id: 0,
-      article: ''
+      article: '',
+      refresh: false
     }
     this.newArticle = ''
   }
@@ -59,10 +60,19 @@ class Article extends React.Component {
       }
     });
   }
-  refresh = () => {
-    if(this.props.refresh) {
-      this.props.refresh();
-    }
+  refresh = (id) => {
+    // if (this.props.refresh) {
+    //   this.props.refresh();
+    // }
+    const ids = this.state.article.id;
+    const commentArray = this.state.article.comments.filter( comment => comment.commentid !== id);
+    this.setState((prevState) => {
+      prevState.article.comments = commentArray;
+      return {
+        article: prevState.article
+      }
+    })
+    
   }
   check = () => {
       ls.set('singleArticle', this.props.article);
@@ -106,7 +116,7 @@ class Article extends React.Component {
     let article;
     if (this.props.match.params.id && this.state.article) {
       article = this.state.article;
-    } else {
+    } else  {
       article = this.props.article;
     }
     let comment = 0

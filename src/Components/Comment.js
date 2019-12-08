@@ -6,13 +6,17 @@ class Comment extends React.Component {
     flag: '',
     up: 0,
     down: 0,
-    status: ''
+    status: '',
+    id: 0
+  }
+  componentDidMount() {
+    this.setState({id: this.props.articleId})
   }
   flag = () => {
     this.setState({flag: this.state.flag === '' ? 'flag' : ''})
   }
-  refresh = () => {
-    this.props.refresh();
+  refresh = (id) => {
+    this.props.refresh(id);
   }
   delete = () => {
     const commentId = this.props.comment.commentid;
@@ -28,7 +32,8 @@ class Comment extends React.Component {
     })
     .then((res) => res.json())
     .then((result) => {
-      this.refresh();
+      const id = this.props.comment.commentid;
+      this.refresh(id);
     })
   }
   countUp = () => {

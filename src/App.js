@@ -3,7 +3,7 @@ import './App.css';
 import Footer from './Footer';
 import Header from './Components/Header';
 import Admin from './Components/Admin';
-import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
+import {HashRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import Home from './Components/Home';
 import SignIn from './Components/SignInComponent';
 import Employee from './Components/Employee';
