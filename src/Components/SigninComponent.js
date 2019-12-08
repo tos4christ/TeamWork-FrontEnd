@@ -4,12 +4,6 @@ import {withRouter} from 'react-router';
 import ls from 'local-storage';
 
 class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      token: ''
-    }
-  }
   handleSubmission = (e) => {
     e.preventDefault();
     const url = "https://teamworksng.herokuapp.com/api/v1/auth/signin";

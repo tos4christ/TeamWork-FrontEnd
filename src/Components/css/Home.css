@@ -55,8 +55,11 @@
 }
 .article h2 {
   margin: 10px 60px;
-  border-bottom: 1px ridge pink;
-  color: cyan;
+  background: whitesmoke;
+  padding: 10px;
+  color: greenyellow;
+  width: fit-content;
+  border-radius: 4px;
 }
 .article p {
   padding: 5px 20px;
@@ -71,6 +74,7 @@
 .article-container {
   background: white;
   margin: 10px 20px;
+  padding: 1px;
 }
 .commentDiv {
   display: block;

@@ -14,6 +14,7 @@ class Article extends React.Component {
       id: 0,
       article: ''
     }
+    this.newArticle = ''
   }
   countComment = () => {
     if(this.props.article.comments) {
@@ -25,10 +26,14 @@ class Article extends React.Component {
     }
   }
   componentDidMount() {
-    this.setState({
-      id: this.props.article.id,
-      article: this.props.article
-    });
+    if(this.props.match.params.id) {
+      this.getParamsArticle(this.props.match.params.id);
+    } else {
+      this.setState({
+        id: this.props.article.id,
+        article: this.props.article
+      });
+    }
   }
   reveal = () => {
     this.setState({
@@ -55,7 +60,6 @@ class Article extends React.Component {
     });
   }
   refresh = () => {
-    console.log(this.props)
     if(this.props.refresh) {
       this.props.refresh();
     }
@@ -80,19 +84,44 @@ class Article extends React.Component {
       this.props.history.push('/api/v1/employee/articles/get')
     })
   }
+  getParamsArticle = (id) => {
+    const url = `https://teamworksng.herokuapp.com/api/v1/articles/${id}`;
+    fetch(url, {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + ls.get('token')
+      }
+    })
+    .then((res) => res.json())
+    .then((result) => {
+      this.setState({
+        article: result.data
+      });
+    })
+    .catch(e => console.error(e))
+  }
   render() {
+    let article;
+    if (this.props.match.params.id && this.state.article) {
+      article = this.state.article;
+    } else {
+      article = this.props.article;
+    }
     let comment = 0
-    if(this.props.article.comments) {
-      comment = this.props.article.comments.length;
+    if(article.comments) {
+      comment = article.comments.length;
       this.commentArray = [];
-      const comments = this.props.article.comments.filter( (comment, count) => count <= 10)
-      comments.forEach(comment => this.commentArray.push(<Comment comment={comment} key={comment.commentid} articleId={this.props.article.id} refresh={this.refresh} />));
+      const comments = article.comments.filter( (comment, count) => count <= 10)
+      comments.forEach(comment => this.commentArray.push(<Comment comment={comment} key={comment.commentid} articleId={article.id} refresh={this.refresh} />));
     }
     return (
       <div className='article-container'>
         <div className='article'>
-          { this.props.linked === 'true' ? <Link to={`${this.props.match.path}/${this.props.article.id}`} onClick={this.check}><h2>{this.props.article.title}</h2></Link> : <h2>{this.props.article.title}</h2> }
-          <p>{this.props.article.article }  <span> { this.props.article.id} </span></p> 
+      { this.props.linked === 'true' ? <Link to={`${this.props.match.path}/${this.props.article.id}`} onClick={this.check}><h2>{article.title}</h2></Link> : <h2>{article.title}</h2> }
+          <p>{article.article }  <span> &nbsp; { article.id} </span> {article.tag? <span>&nbsp;  Tags: {article.tag}</span> : ''}</p> 
+          
         </div>
         <div className='icons'>
           <span onClick={this.countUp} ><i className="fas fa-thumbs-up fa-1x" />{this.state.up} </span>

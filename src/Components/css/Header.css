@@ -10,9 +10,11 @@ header,
 .headerText {
   text-align: left;
   font-size: 1em;
-  padding: 0;
+  padding: 10px;
   margin: auto;
   height: auto;
+  background: honeydew;
+  border-radius: 5px;
 }
 .main-nav li a {
   display: inline-block;
@@ -21,9 +23,11 @@ header,
   padding: 1.5em;
   border: 2px solid transparent;
   height: auto;
+  background: whitesmoke;
+  border-radius: 3px;
 }
 .main-nav li {
-  padding: 0;
+  padding: 3px;
   margin: 0;
   text-transform: uppercase;
 }

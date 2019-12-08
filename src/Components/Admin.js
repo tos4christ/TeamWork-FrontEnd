@@ -4,29 +4,6 @@ import { Route, NavLink, withRouter } from 'react-router-dom';
 import Form from './Form';
 
 class CreateEmployee extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-       token: '',
-       route: '/',
-       logged: 'Sign Out'
-       }
-  }
-  headerStateChange = (route, logged) => {
-    this.props.headerState(route, logged);
-  }
-  componentDidMount() {
-    if (this.props.token) {
-      this.setState((prevState) => {
-        prevState.token = this.props.token;
-        return {
-          token: prevState.token
-        }
-      });
-    }
-    this.headerStateChange(this.state.route, this.state.logged)
-  }
-
   render() {
     return (
       <div>
