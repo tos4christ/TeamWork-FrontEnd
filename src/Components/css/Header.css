@@ -5,20 +5,22 @@ header,
   margin: 0;
   padding: 0;
   background-color: lightgrey;
+  height: auto;
 }
 .headerText {
   text-align: left;
-  font-size: 2em;
+  font-size: 1em;
   padding: 0;
   margin: auto;
+  height: auto;
 }
 .main-nav li a {
   display: inline-block;
   text-align: justify;
   margin: auto;
-  padding: 2em;
+  padding: 1.5em;
   border: 2px solid transparent;
-  height: 100%;
+  height: auto;
 }
 .main-nav li {
   padding: 0;
@@ -38,11 +40,27 @@ a {
 }
 .icn-logo {
   margin-right: auto;
-  padding: 2em;
+  padding: 0.8em;
   background: #54606b;
   color: #fff;
+  height: auto;
 }
 .main-nav li a:hover {
   background-color: rgb(113, 36, 202);
   color: #fff;
+}
+/* ===================
+  MEDIA QUERIES
+======================= */
+@media (min-width: 0) and (max-width: 768px) {
+  header .icn-logo, .main-nav {
+    display: none;
+  }
+  .headerText {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 769px) {
+
 }

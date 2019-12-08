@@ -1,7 +1,7 @@
 import React from 'react';
 import Article from './Article';
 import ls from 'local-storage';
-import { conditionalExpression } from '@babel/types';
+import { withRouter } from 'react-router-dom';
 
 class Articles extends React.Component {
   constructor(props) {
@@ -10,14 +10,16 @@ class Articles extends React.Component {
       article: ''
     }
   }
+  
   componentDidMount() {
-    this.getArticle();
+    this.getAllArticles();
   }
   refresh = () => {
-    this.getArticle();
+    this.getAllArticles();
   }
-  getArticle = () => {
-    const url = "https://teamworksng.herokuapp.com/api/v1/articles/3";
+  getAllArticles = () => {
+    const userId = ls.get('userId');
+    const url = `https://teamworksng.herokuapp.com/api/v1/articles/all/${userId}`;
     fetch(url, {
       method: 'GET',
       mode: 'cors',
@@ -28,20 +30,27 @@ class Articles extends React.Component {
     })
     .then((res) => res.json())
     .then((result) => {
-      this.setState({article: result.data });
+      this.setState((prevState) => {
+        prevState.article = result.data.articles;
+        return {
+          article: prevState.article
+        }
+      });
     })
     .catch(e => console.error(e))
   }
-
   render() {
+      let articles = []
+      if(this.state.article) {
+        const articlePage = this.state.article.filter( (article, count) => count <= 10)
+        articlePage.forEach(article => articles.push(<Article article={article} key={article.id} refresh={this.refresh} linked={'true'} />));
+      }
     return (
       <div className='articles'>
-        <Article article={this.state.article} refresh={this.refresh} />
-        <Article article={this.state.article} />
+        {articles}
       </div>
     );
   }
-
 }
 
-export default Articles;
+export default withRouter(Articles);

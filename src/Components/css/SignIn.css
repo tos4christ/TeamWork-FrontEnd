@@ -45,7 +45,7 @@ input[type="radio"] {
 label span {
   margin-right: 100px;
 }
-form {
+.signinBody form {
   margin: 30px 200px;
   width: 70%;
   padding: 20px 150px;

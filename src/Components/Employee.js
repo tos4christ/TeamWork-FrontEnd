@@ -3,6 +3,8 @@ import {Route, Link, withRouter} from 'react-router-dom';
 import PostArticle from './PostArticle';
 import PostGif from './PostGif';
 import Articles from './Articles';
+import Article from './Article';
+import ls from 'local-storage';
 
 class Employee extends React.Component {
   constructor(props) {
@@ -11,7 +13,6 @@ class Employee extends React.Component {
       employee: 'Oluwatosin Fetuga'
     }
   }
-
   render() {
     return (
       <div>
@@ -34,7 +35,8 @@ class Employee extends React.Component {
         </div>
         <Route path={`${this.props.match.path}/gifs`}> <PostGif /> </Route>
         <Route exact path={`${this.props.match.path}/articles`}> <PostArticle /></Route>
-        <Route path={`${this.props.match.path}/articles/get`}> <Articles /></Route>
+        <Route exact path={`${this.props.match.path}/articles/get`}> <Articles check={this.check} /></Route>
+        <Route path={`${this.props.match.path}/articles/get/:id`}> <Article article={ls.get('singleArticle')} linked={'false'} /></Route>
       </div>
     )
   }
