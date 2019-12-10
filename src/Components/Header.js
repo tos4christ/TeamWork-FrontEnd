@@ -1,29 +1,28 @@
 import React from 'react';
-import './css/Header.css';
+import './CSS/Header.css';
 import {NavLink, Link, withRouter} from 'react-router-dom';
 import ls from 'local-storage';
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      headerRoute: '',
-      headerState: ''
+    state = {
+      headerRoute: '/api/v1/auth/signin',
+      headerState: 'Sign Out',
+      prevSet: this.props.set
     }
-  }
-
-  componentDidMount() {
-    console.log('again')
-    if (ls.get('token')) {
-      this.setState((prevState) => {
-        prevState.headerState = 'Sign Out';
-        prevState.headerRoute = '/signout';
-        return {
-          headerRoute: prevState.headerRoute,
-          headerState: prevState.headerState
-        }
-      })
-    } else this.setState({headerRoute: '/api/v1/auth/signin', headerState: 'Sign In'});
+    componentDidMount() {
+      if (!this.props.set) {
+        this.setState({headerState: 'Sign In'})
+      }
+    }
+  static getDerivedStateFromProps(props, state) {
+    if (props.set !== state.prevSet) {
+      return {
+        prevSet: props.set,
+        headerRoute: '/signout',
+        headerState: 'Sign Out'
+      };
+    }
+    return null;
   }
   setHead = () => {
     if (this.state.headerState === 'Sign Out') {
@@ -31,7 +30,6 @@ class Header extends React.Component {
       this.setState({headerState: 'Sign In'})
     }
   }
-
   render() {
     return (
       <header>

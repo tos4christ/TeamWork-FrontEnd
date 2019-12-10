@@ -34,7 +34,7 @@ class PostGif extends React.Component {
     return (
       <div className='gifPost'>
         <p> Gif Title</p>
-        <input type='file' name='gifPost' ref={(input) => this.img = input} onChange={this.showImage} /><br />
+        <input type='file' name='gifPost' ref={(input) => this.img = input} onChange={this.showImage} accept="image/gif" /><br />
         <img src={this.state.img} className={this.state.imgClass} alt='gif upload'/>
         <button className='button'> Upload </button>
       </div>

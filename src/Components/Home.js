@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect} from 'react-router-dom';
-import './css/Home.css';
+import './CSS/Home.css';
 import { withRouter } from 'react-router';
 
 class Home extends React.Component {

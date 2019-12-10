@@ -1,10 +1,9 @@
 import React from 'react';
 import {Route, NavLink, withRouter} from 'react-router-dom';
-import PostArticle from './PostArticle';
-import PostGif from './PostGif';
-import Articles from './Articles';
-import Article from './Article';
-import ls from 'local-storage';
+import PostArticle from './Articles/PostArticle';
+import PostGif from './Gifs/PostGif';
+import Articles from './Articles/Articles';
+import SingleArticle from './Articles/SingleArticle';
 
 class Employee extends React.Component {
   constructor(props) {
@@ -33,10 +32,10 @@ class Employee extends React.Component {
           <div className='display'>  
           </div>
         </div>
-        <Route path={`${this.props.match.path}/gifs`}> <PostGif /> </Route>
+        <Route exact path={`${this.props.match.path}/gifs`}> <PostGif /> </Route>
         <Route exact path={`${this.props.match.path}/articles`}> <PostArticle /></Route>
-        <Route exact path={`${this.props.match.path}/articles/get`}> <Articles check={this.check} /></Route>
-        <Route path={`${this.props.match.path}/articles/get/:id`}> <Article article={ls.get('singleArticle')} linked={'false'} /></Route>
+        <Route exact path={`${this.props.match.path}/articles/get`}> <Articles /></Route>
+        <Route path={`${this.props.match.path}/articles/get/:id`} render={() => <SingleArticle />} />
       </div>
     )
   }

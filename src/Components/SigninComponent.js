@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/SignIn.css';
+import './CSS/SignIn.css';
 import {withRouter} from 'react-router';
 import ls from 'local-storage';
 
@@ -19,6 +19,7 @@ class SignIn extends React.Component {
     .then((res) => res.json())
     .then((result) => {
       this.setToken(result.data.token, result.data.userId);
+      this.props.setHeader();
       if(this.admin.checked) {
         this.props.history.push('/api/v1/admin');
       } else if(this.emp.checked) {

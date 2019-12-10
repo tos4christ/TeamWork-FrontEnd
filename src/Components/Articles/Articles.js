@@ -9,8 +9,7 @@ class Articles extends React.Component {
     this.state = {
       article: ''
     }
-  }
-  
+  } 
   componentDidMount() {
     this.getAllArticles();
   }
@@ -47,7 +46,7 @@ class Articles extends React.Component {
       }
     return (
       <div className='articles'>
-        {articles}
+        {articles}  
       </div>
     );
   }

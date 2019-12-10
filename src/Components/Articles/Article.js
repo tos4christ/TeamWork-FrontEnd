@@ -1,5 +1,5 @@
 import React from 'react';
-import Comment from './Comment';
+import Comment from '../Comment';
 import {withRouter, Link} from 'react-router-dom';
 import ls from 'local-storage';
 
@@ -12,7 +12,7 @@ class Article extends React.Component {
       flag: '',
       commentClass: 'hidden',
       id: 0,
-      article: '',
+      article: this.props.article,
       refresh: false
     }
     this.newArticle = ''
@@ -27,14 +27,10 @@ class Article extends React.Component {
     }
   }
   componentDidMount() {
-    if(this.props.match.params.id) {
-      this.getParamsArticle(this.props.match.params.id);
-    } else {
-      this.setState({
-        id: this.props.article.id,
-        article: this.props.article
-      });
-    }
+    this.setState({
+      id: this.props.article.id,
+      article: this.props.article
+    });
   }
   reveal = () => {
     this.setState({
@@ -61,21 +57,7 @@ class Article extends React.Component {
     });
   }
   refresh = (id) => {
-    // if (this.props.refresh) {
-    //   this.props.refresh();
-    // }
-    const ids = this.state.article.id;
-    const commentArray = this.state.article.comments.filter( comment => comment.commentid !== id);
-    this.setState((prevState) => {
-      prevState.article.comments = commentArray;
-      return {
-        article: prevState.article
-      }
-    })
-    
-  }
-  check = () => {
-      ls.set('singleArticle', this.props.article);
+    this.props.refresh();    
   }
   delete = () => {
     const articleId = this.state.id
@@ -91,34 +73,10 @@ class Article extends React.Component {
     .then((res) => res.json())
     .then((result) => {
       this.refresh();
-      this.props.history.push('/api/v1/employee/articles/get')
     })
-  }
-  getParamsArticle = (id) => {
-    const url = `https://teamworksng.herokuapp.com/api/v1/articles/${id}`;
-    fetch(url, {
-      method: 'GET',
-      mode: 'cors',
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + ls.get('token')
-      }
-    })
-    .then((res) => res.json())
-    .then((result) => {
-      this.setState({
-        article: result.data
-      });
-    })
-    .catch(e => console.error(e))
   }
   render() {
-    let article;
-    if (this.props.match.params.id && this.state.article) {
-      article = this.state.article;
-    } else  {
-      article = this.props.article;
-    }
+    const article = this.state.article;
     let comment = 0
     if(article.comments) {
       comment = article.comments.length;
@@ -129,7 +87,7 @@ class Article extends React.Component {
     return (
       <div className='article-container'>
         <div className='article'>
-      { this.props.linked === 'true' ? <Link to={`${this.props.match.path}/${this.props.article.id}`} onClick={this.check}><h2>{article.title}</h2></Link> : <h2>{article.title}</h2> }
+          <Link to={`${this.props.match.path}/${article.id}`}><h2>{article.title}</h2></Link>
           <p>{article.article }  <span> &nbsp; { article.id} </span> {article.tag? <span>&nbsp;  Tags: {article.tag}</span> : ''}</p> 
           
         </div>

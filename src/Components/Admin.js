@@ -1,7 +1,7 @@
 import React from 'react';
-import './css/CreateEmployee.css';
+import './CSS/CreateEmployee.css';
 import { Route, NavLink, withRouter } from 'react-router-dom';
-import Form from './Form';
+import Form from './Forms/Form';
 
 class CreateEmployee extends React.Component {
   render() {
