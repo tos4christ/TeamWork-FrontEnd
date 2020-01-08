@@ -1,8 +1,31 @@
+.gif-container {
+  padding: 10px 20px;
+}
+.gifs input[type="button"] {
+  padding: 10px;
+  width: 7em;
+  margin: 5px 10px;
+}
+.articles input[type="button"] {
+  padding: 10px;
+  width: 7em;
+  margin: 5px 10px;
+}
+.gif {
+  padding: 0;
+  margin: 0 50px;
+}
+.gif p {
+  padding: 0px 20px;
+  margin: 0;
+}
+.comment {
+  width: 60em;
+}
 .homepage {
   display: flex;
   flex-wrap: wrap;
-  flex-flow: column-reverse;
-  
+  flex-flow: column-reverse; 
 }
 .homepage div {
   padding: 4em;
@@ -27,6 +50,9 @@
 }
 .gifPost {
   padding: 20px 50px;
+}
+.gifPost form input:nth-child(2) {
+  margin: 0 0 10px 0;
 }
 .icons i {
   display: inline-flex;
@@ -53,19 +79,28 @@
   border: none;
   border-radius: 3px;
 }
+.searchBar {
+  width: 70%;
+  padding: 0;
+  height: 3em;
+  margin: auto;
+}
 .article h2 {
   margin: 10px 60px;
-  background: whitesmoke;
   padding: 10px;
   color: greenyellow;
   width: fit-content;
-  border-radius: 4px;
 }
 .article p {
-  padding: 5px 20px;
   display: flex;
   margin: 20px 50px;
-  width: 50em;
+  width: 70em;
+  padding-left: 20px;
+}
+.article p:nth-child(2) {
+  border-radius: 4px;
+  background: rgb(167, 171, 187);
+  padding: 10px 20px;
 }
 .article {
   background: none;
@@ -89,4 +124,52 @@
 .articles {
   background: rgb(223, 209, 209);
   padding: 2px;
+}
+
+@media only screen and (max-device-width: 768px) {
+
+  .commentDiv {
+    width: auto;
+    margin-left: 0;
+    background: rgb(167, 171, 187);
+    border-radius: 5px;
+  }
+  .article-container ul, .gif-container ul {
+    padding: 1em;
+    margin: auto;
+  }
+  .comments, .comment {
+    width: auto;
+    padding: 0;
+    display: inline-block;
+  }
+  .comment input {
+    width: auto;
+  }
+  .comment label {
+    margin: 0;
+    padding: 1%;
+  }
+  .comment button {
+    margin: 0;
+  }
+
+  .article p {
+    margin: 20px 50px;
+    width: 15em;
+    padding-left: 20px;
+  }
+  .article-container, .gif-container {
+    padding: 0;
+    margin: auto;
+  }
+  .icons {
+    display: inline-flex;
+    margin: 0 25px;
+  }
+
+  .homepage, .signout {
+    padding: 0 30%;
+    display: flex;
+  }
 }

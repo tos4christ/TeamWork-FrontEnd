@@ -1,14 +1,8 @@
 import React from 'react';
+import ls from 'local-storage';
 
 class Form extends React.Component {
 
-  // componentDidMount() {
-  //   this.headerStateChange('/', 'Sign Out');
-  // }
-
-  // headerStateChange = (route, logged) => {
-  //   this.props.headerState(route, logged);
-  // }
   handleSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -27,14 +21,14 @@ class Form extends React.Component {
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer "+ this.props.token
+        "Authorization": "Bearer "+ ls.get('token')
       },
       mode: 'cors'
     })
     .then( res => res.json())
     .then ( response => {
       console.log(response);
-      const path = '/admin';
+      const path = '/api/v1/admin';
       this.props.history.push(path)
     });
 

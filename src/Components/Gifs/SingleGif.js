@@ -1,20 +1,20 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-import Article from './Article';
+import Gif from './Gif';
 import ls from 'local-storage';
 
-class SingleArticle extends React.Component {
+class SingleGif extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      start: this.getAnArticle(),
-      article: '',
+      start: this.getAGif(),
+      gif: '',
       isLoaded: false
     }
   }
-  getAnArticle = () => {
+  getAGif = () => {
     const id = this.props.match.params.id;
-    const url = `https://teamworksng.herokuapp.com/api/v1/articles/${id}`;
+    const url = `https://teamworksng.herokuapp.com/api/v1/gifs/${id}`;
     fetch(url, {
       method: 'GET',
       mode: 'cors',
@@ -26,26 +26,26 @@ class SingleArticle extends React.Component {
     .then((res) => res.json())
     .then((result) => {
       this.setState((prevState) => {
-        prevState.article = result.data;
+        prevState.gif = result.data;
         prevState.isLoaded = true;
         return {
-          article: prevState.article,
+          gif: prevState.gif,
           isLoaded: prevState.isLoaded
         }
       });
     })
     .catch(e => console.error(e))
   }
-  render() {   
-    let article;
+  render() {
+    let gif;
     if(this.state.isLoaded) {
-      article = <Article article={this.state.article} />
+      gif = <Gif gif={this.state.gif} />
     }
     return (
-      <div> {article} </div>
+      <div> {gif} </div>
     );
   }
 
 }
 
-export default withRouter(SingleArticle);
+export default withRouter(SingleGif);

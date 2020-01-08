@@ -18,35 +18,43 @@ class SignIn extends React.Component {
     })
     .then((res) => res.json())
     .then((result) => {
-      this.setToken(result.data.token, result.data.userId);
-      this.props.setHeader();
+      ls.set('userDetails', result.data.allDetails);
+      ls.set('profile_pic', result.data.allDetails.profile_pic);
+      this.setToken(result.data.token, result.data.userId, result.data.userName);
       if(this.admin.checked) {
         this.props.history.push('/api/v1/admin');
       } else if(this.emp.checked) {
-        this.props.history.push('/api/v1/employee');
+        this.props.history.push('/api/v1/employee/feed');
       } 
     })
     .catch(e => console.error(e))
   }
-  setToken = (token, userId) => {
+  setToken = (token, userId, userName) => {
     ls.set('token', token);
-    ls.set('userId', userId)
+    ls.set('userId', userId);
+    ls.set('userName', userName);
+    setTimeout(() => {
+      this.props.history.push('/signout');
+    }, 600000);
   }
   render() {
-
     return (
       <div className="signinBody"> 
         <form onSubmit={this.handleSubmission}>
             <h2>Sign In</h2>
             <label>
-              <input type="email" placeholder="type your email...." ref={(input) => this.email = input}></input>
+              <div className="signInput">  
+                <input type="email" placeholder="type your email...." ref={(input) => this.email = input}></input> 
+              </div>
             </label>
             <label>
-              <input type="password" placeholder="type your password...." ref={(input) => this.password = input}></input>
+              <div className="signInput"> 
+                <input type="password" placeholder="type your password...." ref={(input) => this.password = input}></input> 
+              </div>
             </label><br/>
             <label>
-              <span><input type="radio" name='role' value='admin' ref={(input) => this.admin = input} required/> Admin</span>
-              <span><input type="radio" name='role' value='employee' ref={(input) => this.emp = input} required/> Employee</span>
+              <input type="radio" name='role' value='admin' ref={(input) => this.admin = input} required/><span> Admin</span>
+              <input type="radio" name='role' value='employee' ref={(input) => this.emp = input} required/><span> Employee</span>
             </label><br />
             <label>
               <input type="submit" />
@@ -54,8 +62,7 @@ class SignIn extends React.Component {
           </form> 
       </div>
     )
-  }
-  
+  } 
 }
 
 export default withRouter(SignIn);

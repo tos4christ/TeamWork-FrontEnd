@@ -20,9 +20,8 @@ header,
   display: inline-block;
   text-align: justify;
   margin: auto;
-  padding: 1.5em;
+  padding: 0.8em;
   border: 2px solid transparent;
-  height: auto;
   background: whitesmoke;
   border-radius: 3px;
 }
@@ -56,15 +55,14 @@ a {
 /* ===================
   MEDIA QUERIES
 ======================= */
-@media (min-width: 0) and (max-width: 768px) {
-  header .icn-logo, .main-nav {
+@media only screen and (max-device-width: 768px) {
+  .dashed {
     display: none;
   }
-  .headerText {
-    padding: 20px;
-  }
 }
+@media (min-device-width: 769px) {
 
-@media (min-width: 769px) {
-
+}
+.signout {
+  padding: 100px 500px;
 }

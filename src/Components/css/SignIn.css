@@ -26,6 +26,7 @@ input {
   border-radius: 5px;
   width: 70%;
   border: blueviolet 1px solid;
+  color: orange;
 }
 input[type="submit"] {
   margin: 10px 0px;
@@ -35,13 +36,7 @@ input[type="submit"] {
   border: none;
   width: auto;
 }
-input[type="radio"] {
-  margin: 15px 10px 15px 5px;
-  color: white;
-  display: inline;
-  border: none;
-  width: auto;
-}
+
 label span {
   margin-right: 100px;
 }
@@ -49,7 +44,7 @@ label span {
   margin: 30px 200px;
   width: 70%;
   padding: 20px 150px;
-  background: rgb(155, 95, 132);
+  background: rgb(107, 152, 173);
   border-radius: 5px;
   color: white;
 }
@@ -93,4 +88,105 @@ label span {
   margin-bottom: 5px;
   display: inline-flex;
   
+}
+/* ===================
+  MEDIA QUERIES
+======================= */
+@media only screen and (max-device-width: 768px) {
+  h2, h3, h4 {
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  span, i, a {
+    font-size: 1em;
+    padding: 0;
+  }
+  .rule button, .rule button a {
+    margin: 1px;
+    padding: 0;
+    width: 5px;
+    height: 25px;
+  }
+  .signinBody {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .signinBody form {
+    padding: 0;
+    margin: 20px 40px;
+    width: 80%;
+  }
+  .signinBody input {
+    margin: 10px;
+    padding: 5px;
+  }
+  h2 {
+    margin: 10px;
+    padding: 5px;
+    color: greenyellow;
+  }
+  input[type="radio"] {
+    padding: 0;
+    display: inline-flex;
+    margin-left: 15px;
+    font-size: small;
+  }
+  label {
+    display: flex;
+  }
+  label span {
+    margin: 10px 5px;
+  }
+  input[type="email"], input[type="password"] {
+    display: inline-block;
+    width: 30em;
+    color: greenyellow;
+    padding: 9px;
+  }
+  .signInput {
+    display: flex;
+    width: 90%;
+  }
+  .dashboard button {
+   width: 30%;
+  }
+  
+}
+@media (min-device-width: 769px) {
+  .signinBody {
+    width: 100%;
+  }
+  .signinBody form {
+    padding: 0;
+    margin: 20px 80px;
+  }
+  .signinBody input, h2 {
+    margin: 15px;
+    padding: 10px;
+  }
+  input[type="radio"] {
+    padding: 0;
+    display: inline-flex;
+    margin: 15px 10px;
+    font-size: small;
+    width: 2em;
+  }
+  label {
+    display: flex;
+  }
+  label span {
+    margin: 10px 0;
+  }
+  input[type="email"], input[type="password"] {
+    display: inline-block;
+    width: 30em;
+  }
+  .signInput {
+    display: flex;
+    width: 90%;
+  }
+
 }

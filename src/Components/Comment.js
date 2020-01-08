@@ -7,21 +7,24 @@ class Comment extends React.Component {
     up: 0,
     down: 0,
     status: '',
-    id: 0
-  }
-  componentDidMount() {
-    this.setState({id: this.props.articleId})
+    id: this.props.Id
   }
   flag = () => {
     this.setState({flag: this.state.flag === '' ? 'flag' : ''})
   }
-  refresh = (id) => {
-    this.props.refresh(id);
+  removeComment = (id) => {
+    this.props.removeComment(id);
   }
-  delete = () => {
+  deleteComment = () => {
     const commentId = this.props.comment.commentid;
-    const articleId = this.props.articleId
-    const url = `https://teamworksng.herokuapp.com/api/v1/articles/${articleId}/commented/${commentId}`;
+    const Id = this.props.Id
+    let res;
+    if(this.props.type === 'gifs') {
+      res = 'gifs';
+    } else if (this.props.type === 'articles') {
+      res = 'articles';
+    }
+    const url = `https://teamworksng.herokuapp.com/api/v1/${res}/${Id}/commented/${commentId}`;
     fetch(url, {
       method: 'DELETE',
       mode: 'cors',
@@ -32,13 +35,12 @@ class Comment extends React.Component {
     })
     .then((res) => res.json())
     .then((result) => {
-      const id = this.props.comment.commentid;
-      this.refresh(id);
+      this.removeComment(this.props.Id);
     })
   }
   countUp = () => {
     this.setState((prevState) => {
-      prevState.up += 1;
+      prevState.up = 1;
       return {
         up: prevState.up
       }
@@ -46,14 +48,14 @@ class Comment extends React.Component {
   }
   countDown = () => {
     this.setState((prevState) => {
-      prevState.down += 1;
+      prevState.down = 1;
       return {
         down: prevState.down
       }
     });
   }
   render() {
-    const newDate = Date(this.props.comment.createdoon)
+    const newDate = Date(this.props.comment.createdon)
     return (
       <div className='commentDiv'>
         <span>{this.props.comment.authorid} {this.props.comment.commentid} </span>
@@ -64,7 +66,7 @@ class Comment extends React.Component {
           <span onClick={this.countDown}><i className="fas fa-thumbs-down fa-1x" />{this.state.down} </span>
           <span onClick={this.flag}><i className={`fas fa-flag fa-1x ${this.state.flag}`} /> </span>
           <span><i className="fas fa-comment fa-1x" /></span>
-          <span onClick={this.delete} ><i className="fas fa-minus-circle fa-1x"></i> </span>
+          <span onClick={this.deleteComment} ><i className="fas fa-minus-circle fa-1x"></i> </span>
         </div>
       </div>
     );

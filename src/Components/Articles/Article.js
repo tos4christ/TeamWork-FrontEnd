@@ -2,6 +2,7 @@ import React from 'react';
 import Comment from '../Comment';
 import {withRouter, Link} from 'react-router-dom';
 import ls from 'local-storage';
+import PostComment from '../PostComment';
 
 class Article extends React.Component {
   constructor(props) {
@@ -11,30 +12,24 @@ class Article extends React.Component {
       down: 0,
       flag: '',
       commentClass: 'hidden',
-      id: 0,
-      article: this.props.article,
-      refresh: false
-    }
-    this.newArticle = ''
-  }
-  countComment = () => {
-    if(this.props.article.comments) {
-      console.log('seen')
-      const count = this.props.article.comments.length
-      this.setState({
-        comment: count
-      })
-    }
-  }
-  componentDidMount() {
-    this.setState({
       id: this.props.article.id,
-      article: this.props.article
-    });
+      article: this.props.article,
+      comments: this.props.article.comments,
+      display: ''
+    }
   }
   reveal = () => {
     this.setState({
       commentClass: this.state.commentClass === 'seen' ? 'hidden' : 'seen'
+    });
+  }
+  removeComment = (id) => {
+    const comm = this.state.comments.filter( comment => comment.commentid !== id);
+    this.setState(prevState => {
+      prevState.comments = comm;
+      return {
+        comments: prevState.comments
+      }
     });
   }
   flag = () => {
@@ -56,9 +51,6 @@ class Article extends React.Component {
       }
     });
   }
-  refresh = (id) => {
-    this.props.refresh();    
-  }
   delete = () => {
     const articleId = this.state.id
     const url = `https://teamworksng.herokuapp.com/api/v1/articles/${articleId}`;
@@ -71,25 +63,51 @@ class Article extends React.Component {
       }
     })
     .then((res) => res.json())
-    .then((result) => {
-      this.refresh();
+    .then(() => {
+      this.setState(prevState => {
+        prevState.display = 'none';
+        return {
+          display: prevState.display
+        }
+      });
     })
+  }
+  addComment = (comment) => {
+    let comments = {};
+    if(this.state.comments === undefined) {
+      comments.commentid = 1;
+      comments.comment = comment;
+      this.setState({comments: [comments]})
+    } else {
+      comments.commentid = this.state.comments.length + 1;
+      comments.comment = comment;
+      this.setState(prevState => {
+        const newComm = this.state.comments;
+        newComm.push(comments);
+        prevState.comments = newComm;
+        return {
+          comments: prevState.comments
+        }
+      })
+    }
+    
   }
   render() {
     const article = this.state.article;
+    const Comments = this.state.comments;
     let comment = 0
-    if(article.comments) {
-      comment = article.comments.length;
+    if(Comments) {
+      comment = Comments.length;
       this.commentArray = [];
-      const comments = article.comments.filter( (comment, count) => count <= 10)
-      comments.forEach(comment => this.commentArray.push(<Comment comment={comment} key={comment.commentid} articleId={article.id} refresh={this.refresh} />));
+      const comments = Comments.filter( (comment, count) => count <= 10)
+      comments.forEach(comment => this.commentArray.push(<Comment comment={comment} key={comment.commentid} Id={comment.commentid} removeComment={this.removeComment} type='articles' />));
     }
     return (
-      <div className='article-container'>
+      <div className='article-container' style={{display: this.state.display}}>
         <div className='article'>
-          <Link to={`${this.props.match.path}/${article.id}`}><h2>{article.title}</h2></Link>
+          { this.props.match.params.id ? <h2>{article.title}</h2> :  <Link to={`${this.props.match.path}/${article.id}`}><h2>{article.title}</h2></Link> }
           <p>{article.article }  <span> &nbsp; { article.id} </span> {article.tag? <span>&nbsp;  Tags: {article.tag}</span> : ''}</p> 
-          
+          <p> Article By { article.author } </p>
         </div>
         <div className='icons'>
           <span onClick={this.countUp} ><i className="fas fa-thumbs-up fa-1x" />{this.state.up} </span>
@@ -100,6 +118,7 @@ class Article extends React.Component {
         </div>
         <div className={this.state.commentClass+` comments`}>
           <ul>
+            <PostComment item='articles' id={article.id} addComment={this.addComment} />
             {this.commentArray}
           </ul>
         </div>
