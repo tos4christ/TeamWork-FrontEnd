@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/TeamWork-FrontEnd/static/css/main.6b0dbf9a.chunk.css",
-    "main.js": "/TeamWork-FrontEnd/static/js/main.5e41c591.chunk.js",
-    "main.js.map": "/TeamWork-FrontEnd/static/js/main.5e41c591.chunk.js.map",
+    "main.js": "/TeamWork-FrontEnd/static/js/main.61935e88.chunk.js",
+    "main.js.map": "/TeamWork-FrontEnd/static/js/main.61935e88.chunk.js.map",
     "runtime-main.js": "/TeamWork-FrontEnd/static/js/runtime-main.5ec62393.js",
     "runtime-main.js.map": "/TeamWork-FrontEnd/static/js/runtime-main.5ec62393.js.map",
     "static/js/2.d6206f8b.chunk.js": "/TeamWork-FrontEnd/static/js/2.d6206f8b.chunk.js",
     "static/js/2.d6206f8b.chunk.js.map": "/TeamWork-FrontEnd/static/js/2.d6206f8b.chunk.js.map",
     "index.html": "/TeamWork-FrontEnd/index.html",
-    "precache-manifest.89f45692150585d137499b52ce1eac21.js": "/TeamWork-FrontEnd/precache-manifest.89f45692150585d137499b52ce1eac21.js",
+    "precache-manifest.22c454275da2da1d1bcf3d429b9614c4.js": "/TeamWork-FrontEnd/precache-manifest.22c454275da2da1d1bcf3d429b9614c4.js",
     "service-worker.js": "/TeamWork-FrontEnd/service-worker.js",
     "static/css/main.6b0dbf9a.chunk.css.map": "/TeamWork-FrontEnd/static/css/main.6b0dbf9a.chunk.css.map",
     "static/js/2.d6206f8b.chunk.js.LICENSE": "/TeamWork-FrontEnd/static/js/2.d6206f8b.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5ec62393.js",
     "static/js/2.d6206f8b.chunk.js",
     "static/css/main.6b0dbf9a.chunk.css",
-    "static/js/main.5e41c591.chunk.js"
+    "static/js/main.61935e88.chunk.js"
   ]
 }
