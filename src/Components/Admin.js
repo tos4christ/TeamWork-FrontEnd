@@ -1,5 +1,5 @@
 import React from 'react';
-import './CSS/CreateEmployee.css';
+import './css/CreateEmployee.css';
 import { Route, NavLink, withRouter } from 'react-router-dom';
 import Form from './Forms/Form';
 

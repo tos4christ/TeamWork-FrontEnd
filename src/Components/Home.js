@@ -1,6 +1,6 @@
 import React from 'react';
 import {withRouter, Link} from 'react-router-dom';
-import './CSS/Home.css';
+import './css/Home.css';
 
 class Home extends React.Component {
   
