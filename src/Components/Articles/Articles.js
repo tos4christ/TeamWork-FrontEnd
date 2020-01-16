@@ -3,6 +3,7 @@ import Article from './Article';
 import ls from 'local-storage';
 import { withRouter } from 'react-router-dom';
 import Sort from '../Logic/Sort';
+import { List } from '@material-ui/core';
 
 class Articles extends React.Component {
   constructor(props) {
@@ -78,12 +79,15 @@ class Articles extends React.Component {
         articlePage.forEach(article => articles.push(<Article article={article} key={article.id} />));
       }
     return (
-      <div className='articles'>
+      <div>
         <div style={{display: 'flex'}}>
         <Sort sort={this.sort} />
         <input type='text' placeholder='search item by title' ref={input => this.search = input} className='searchBar' onChange={this.filterArticle} />
         </div>
+        <List>
         {articles} 
+        </List>
+        
         {articles.length < 1 ? <h2>Start by Posting an Article or Gif photos</h2> : <div></div>} 
         <div>
           <input type='button' value='NEXT' onClick={this.nextPage}/>

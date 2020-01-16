@@ -3,7 +3,9 @@ import {withRouter, Link} from 'react-router-dom';
 import './CSS/Home.css';
 
 class Home extends React.Component {
+  
   render() {
+    console.log(this.props.match.path)
     return (  
       <div className='homepage'>      
         <h2> This is the home page</h2>
@@ -18,7 +20,7 @@ class Home extends React.Component {
           6) You can view Articles and Gifs posted by others when you click on the feeds tab <br />
 
         </p>
-        <button><Link to='/api/v1/auth/signin'> Enter the Site</Link> </button>
+        <button><Link to={`/api/v1/auth/signin`}> Enter the Site</Link> </button>
       </div>
     );
   }

@@ -12,14 +12,17 @@ img {
     }
 }
 .signinBody {
-  height: auto;
-  width: auto;
-  background-color: white;
-  color: white;
+  background: url('../../background.png') repeat fixed;
+}
+.signinForm {
+  margin-left: 20em;
+  margin-top: 4em;
+  background: white;
+  margin-right: 20em;
 }
 form label input {
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 0 10px;
 }
 input {
   padding: 10px;
@@ -27,6 +30,7 @@ input {
   width: 70%;
   border: blueviolet 1px solid;
   color: orange;
+  font-size: 30px;
 }
 input[type="submit"] {
   margin: 10px 0px;
@@ -41,12 +45,11 @@ label span {
   margin-right: 100px;
 }
 .signinBody form {
-  margin: 30px 200px;
-  width: 70%;
+  margin: 10px 200px;
+  width: 120%;
   padding: 20px 150px;
-  background: rgb(107, 152, 173);
   border-radius: 5px;
-  color: white;
+  color: rgb(24, 117, 6);
 }
 .rule {
   border-bottom: 1px solid lightgray;
@@ -93,6 +96,12 @@ label span {
   MEDIA QUERIES
 ======================= */
 @media only screen and (max-device-width: 768px) {
+  .signInput {
+    width: 50%;
+  }
+  .inputDiv {
+    margin: 10px;
+  }
   h2, h3, h4 {
     font-size: 1em;
   }
@@ -143,7 +152,7 @@ label span {
   input[type="email"], input[type="password"] {
     display: inline-block;
     width: 30em;
-    color: greenyellow;
+    color: rgb(155, 80, 151);
     padding: 9px;
   }
   .signInput {
@@ -153,6 +162,7 @@ label span {
   .dashboard button {
    width: 30%;
   }
+  
   
 }
 @media (min-device-width: 769px) {
@@ -185,8 +195,10 @@ label span {
     width: 30em;
   }
   .signInput {
-    display: flex;
-    width: 90%;
+    width: 50%;
+  }
+  .inputDiv {
+    margin: 10px;
   }
 
 }

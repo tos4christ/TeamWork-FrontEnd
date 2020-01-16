@@ -2,6 +2,8 @@ import React from 'react';
 import Article from '../Articles/Article';
 import Gif from '../Gifs/Gif';
 import ls from 'local-storage';
+import { TextField, List } from '@material-ui/core';
+
 
 class FeedPage extends React.Component {
   constructor(props) {
@@ -10,7 +12,7 @@ class FeedPage extends React.Component {
       start: this.getFeeds(),
       feeds: '',
       isLoaded: false,
-      filterText: ''
+      filterText: '',
     }
   }
   getFeeds = () => {
@@ -46,8 +48,22 @@ class FeedPage extends React.Component {
     }
     return (
       <div> 
-        <input type='text' placeholder='search item by title' ref={input => this.search = input} className='searchBar' onChange={this.filterArticle} />
+        <div className='searchBar'>
+          <TextField
+            type='text'
+            variant='outlined'
+            inputRef={(input) => this.search = input}
+            className='searchBar'
+            placeholder='search item by title'
+            onChange={this.filterArticle}
+          />
+        </div>
+        
+        {/* <input type='text'  ref={input => this.search = input} className='searchBar'  /> */}
+        <List>
         {feedPage}
+        </List>
+        
       </div>
     )
   }
