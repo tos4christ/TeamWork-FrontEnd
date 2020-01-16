@@ -1,0 +1,77 @@
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+  height: auto;
+}
+.rightHead header {
+  width: 100px;
+  height: 200px;
+}
+.headerText {
+  text-align: left;
+  font-size: 1em;
+  padding: 10px;
+  margin: auto;
+  height: auto;
+  background: honeydew;
+  border-radius: 5px;
+}
+.main-nav li a {
+  display: inline-block;
+  text-align: justify;
+  margin: auto;
+  padding: 0.8em;
+  border: 2px solid transparent;
+  background: whitesmoke;
+  border-radius: 3px;
+}
+.main-nav li {
+  padding: 3px;
+  margin: 0;
+  text-transform: uppercase;
+}
+.main-nav {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.main-nav .active {
+  background-color: rgb(113, 36, 202);
+  color: #fff;
+}
+.icn-logo {
+  margin-right: auto;
+  padding: 0.8em;
+  background: #54606b;
+  color: #fff;
+  height: auto;
+}
+.main-nav li a:hover {
+  background-color: rgb(113, 36, 202);
+  color: #fff;
+}
+.homelogo {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+/* ===================
+  MEDIA QUERIES
+======================= */
+@media only screen and (max-device-width: 768px) {
+  .dashed {
+    display: none;
+  }
+}
+@media (min-device-width: 769px) {
+
+}
+.signout {
+  padding: 100px 500px;
+}

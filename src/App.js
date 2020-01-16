@@ -1,32 +1,34 @@
 import React from 'react';
 import './App.css';
-import SignIn from './Components/SignInComponent';
-import logo from './logo.svg';
 import Footer from './Footer';
+import Header from './Components/Header';
+import Admin from './Components/Admin';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Home from './Components/Home';
+import SignIn from './Components/SignInComponent';
+import Employee from './Components/Employee';
+import SignOut from './Components/SignOut';
 
-function App() {
+class App extends React.Component {
  
-  return (
-    <div className="App">
-      <header className="App-header"> 
-      <div>
-        <img src={logo} alt="signin page"/>
-      </div>
-      <div>
-        <h1> Welcome to TeamWorksNg </h1> 
-      </div>
-      <div>
-        <h5> ... A social space for employees to interact</h5>
-      </div>        
-      </header>
-      <div>
-        <SignIn />
-      </div>
-      <div>
-        <Footer />
-      </div>   
-    </div>
-  );
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <Header />
+          <Switch >
+            <Route exact path='/' render={() => <Home /> }  />
+            <Route exact path='/TeamWork-FrontEnd' render={() => <Home /> }  />
+            <Route exact path='/signout' render={() => <SignOut setHead={this.setOut} /> }  />
+            <Route exact path='/api/v1/auth/signin' render={() => <SignIn setHead={this.setHead} /> }  />
+            <Route exact path='/api/v1/admin' render={() => <Admin />} />          
+            <Route path='/api/v1/employee' render={ () => <Employee />} />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;

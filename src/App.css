@@ -1,11 +1,8 @@
-.App-header {
-  background-color: #282c34;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-row: 1fr;
-  justify-content: left;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App {
+  margin: 20px;
+  border-radius: .5em;
+  background-color: white;
+  overflow: hidden;
 }
 
 .App-link {

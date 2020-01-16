@@ -1,0 +1,204 @@
+img {
+  width: 200px;
+  height: 200px;
+  /** animation: rotation 10s infinite linear; **/
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+.signinBody {
+  background: url('../../background.png') repeat fixed;
+}
+.signinForm {
+  margin-left: 20em;
+  margin-top: 4em;
+  background: white;
+  margin-right: 20em;
+}
+form label input {
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+input {
+  padding: 10px;
+  border-radius: 5px;
+  width: 70%;
+  border: blueviolet 1px solid;
+  color: orange;
+  font-size: 30px;
+}
+input[type="submit"] {
+  margin: 10px 0px;
+  padding: 10px;
+  color: white;
+  background: blueviolet;
+  border: none;
+  width: auto;
+}
+
+label span {
+  margin-right: 100px;
+}
+.signinBody form {
+  margin: 10px 200px;
+  width: 120%;
+  padding: 20px 150px;
+  border-radius: 5px;
+  color: rgb(24, 117, 6);
+}
+.rule {
+  border-bottom: 1px solid lightgray;
+}
+.dashboard {
+  padding: 0 10px 10px 10px;
+  display: inline-flex;
+  margin: 0;
+  width: 100%;
+}
+.dashhead {
+  padding-left: 30px;
+  margin: 10px 0 0 0;
+}
+.dashboard button {
+  border: none;
+  margin: 10px;
+  background: yellowgreen;
+  border-radius: 4px;
+}
+.dashboard span:nth-child(2) {
+  font-size: 14px;
+  padding: 0;
+  font-family: serif;
+}
+.dashboard .active i {
+  background: white;
+  color: purple;
+}
+.material-icons.md-10 {
+  font-size: 17px;
+  margin-top: 5px;
+  margin-right: 2px;
+  color: white;
+}
+.dashboard button span:nth-child(2) {
+  font-family: sans-serif;
+  color: white;
+  margin-bottom: 5px;
+  display: inline-flex;
+  
+}
+/* ===================
+  MEDIA QUERIES
+======================= */
+@media only screen and (max-device-width: 768px) {
+  .signInput {
+    width: 50%;
+  }
+  .inputDiv {
+    margin: 10px;
+  }
+  h2, h3, h4 {
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  span, i, a {
+    font-size: 1em;
+    padding: 0;
+  }
+  .rule button, .rule button a {
+    margin: 1px;
+    padding: 0;
+    width: 5px;
+    height: 25px;
+  }
+  .signinBody {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .signinBody form {
+    padding: 0;
+    margin: 20px 40px;
+    width: 80%;
+  }
+  .signinBody input {
+    margin: 10px;
+    padding: 5px;
+  }
+  h2 {
+    margin: 10px;
+    padding: 5px;
+    color: greenyellow;
+  }
+  input[type="radio"] {
+    padding: 0;
+    display: inline-flex;
+    margin-left: 15px;
+    font-size: small;
+  }
+  label {
+    display: flex;
+  }
+  label span {
+    margin: 10px 5px;
+  }
+  input[type="email"], input[type="password"] {
+    display: inline-block;
+    width: 30em;
+    color: rgb(155, 80, 151);
+    padding: 9px;
+  }
+  .signInput {
+    display: flex;
+    width: 90%;
+  }
+  .dashboard button {
+   width: 30%;
+  }
+  
+  
+}
+@media (min-device-width: 769px) {
+  .signinBody {
+    width: 100%;
+  }
+  .signinBody form {
+    padding: 0;
+    margin: 20px 80px;
+  }
+  .signinBody input, h2 {
+    margin: 15px;
+    padding: 10px;
+  }
+  input[type="radio"] {
+    padding: 0;
+    display: inline-flex;
+    margin: 15px 10px;
+    font-size: small;
+    width: 2em;
+  }
+  label {
+    display: flex;
+  }
+  label span {
+    margin: 10px 0;
+  }
+  input[type="email"], input[type="password"] {
+    display: inline-block;
+    width: 30em;
+  }
+  .signInput {
+    width: 50%;
+  }
+  .inputDiv {
+    margin: 10px;
+  }
+
+}

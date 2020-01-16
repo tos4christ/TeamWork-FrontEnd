@@ -1,0 +1,181 @@
+.gif-container {
+  padding: 10px 20px;
+}
+.gifs input[type="button"] {
+  padding: 10px;
+  width: 7em;
+  margin: 5px 10px;
+}
+.articles input[type="button"] {
+  padding: 10px;
+  width: 7em;
+  margin: 5px 10px;
+}
+.gif {
+  padding: 0;
+  margin: 0 50px;
+}
+.gif p {
+  padding: 0px 20px;
+  margin: 0;
+}
+.comment {
+  width: 60em;
+}
+.homepage {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column-reverse; 
+}
+.homepage div {
+  padding: 4em;
+}
+.employee-dashboard h3 {
+  padding: 0 20px;
+}
+.articlePost input{
+  width: 30em;
+  display: block;
+  margin: 0 0 10px 0;
+}
+.articlePost textarea {
+  border: 1px solid blueviolet;
+  border-radius: 5px;
+}
+.hidden {
+  display: none;
+}
+.seen {
+  display: inline-flex;
+}
+.gifPost {
+  padding: 20px 50px;
+}
+.gifPost form input:nth-child(2) {
+  margin: 0 0 10px 0;
+}
+
+.icons {
+  margin-left: 6%;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+.articlePost {
+  padding: 20px 50px;
+}
+.button {
+  padding: 10px;
+  color: white;
+  background: blueviolet;
+  margin: 10px;
+  border: none;
+  border-radius: 3px;
+}
+.searchBar {
+  width: 70%;
+  padding: 0;
+  height: 3em;
+  margin: auto;
+}
+.article h2 {
+  margin: 10px 60px;
+  padding: 10px;
+  color: greenyellow;
+  width: fit-content;
+}
+.article p {
+  display: flex;
+  margin: 20px 50px;
+  width: 70em;
+  padding-left: 20px;
+}
+.article p:nth-child(2) {
+  border-radius: 4px;
+  background: rgb(167, 171, 187);
+  padding: 10px 20px;
+}
+.article {
+  background: none;
+  margin-top: 5px;
+}
+.article-container {
+  background: white;
+  margin: 10px 20px;
+  padding: 1px;
+}
+.commentDiv {
+  display: block;
+  width: 60em;
+  margin-left: 100px;
+  background: rgb(167, 171, 187);
+  border-radius: 5px;
+}
+.flag {
+  color: red;
+}
+.articles {
+  background: rgb(223, 209, 209);
+  padding: 2px;
+}
+h3 {
+  margin: auto;
+}
+svg {
+  margin: 2px 10px;
+}
+img {
+  border-radius: 10px;
+  width: 50%;
+  height: auto;
+}
+.homepage, .signout {
+  padding: 3% 7%;
+}
+
+@media only screen and (max-device-width: 768px) {
+
+  .commentDiv {
+    width: auto;
+    margin-left: 0;
+    background: rgb(167, 171, 187);
+    border-radius: 5px;
+  }
+  .article-container ul, .gif-container ul {
+    padding: 1em;
+    margin: auto;
+  }
+  .comments, .comment {
+    width: auto;
+    padding: 0;
+    display: inline-block;
+  }
+  .comment input {
+    width: auto;
+  }
+  .comment label {
+    margin: 0;
+    padding: 1%;
+  }
+  .comment button {
+    margin: 0;
+  }
+
+  .article p {
+    margin: 20px 50px;
+    width: 15em;
+    padding-left: 20px;
+  }
+  .article-container, .gif-container {
+    padding: 0;
+    margin: auto;
+  }
+  .icons {
+    display: inline-flex;
+    margin: 0 15%;
+  }
+
+  .homepage, .signout {
+    padding: 5% 30%;
+  }
+ 
+}
