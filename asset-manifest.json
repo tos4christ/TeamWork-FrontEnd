@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/TeamWork-FrontEnd/static/css/main.073a8eee.chunk.css",
-    "main.js": "/TeamWork-FrontEnd/static/js/main.d488cdbb.chunk.js",
-    "main.js.map": "/TeamWork-FrontEnd/static/js/main.d488cdbb.chunk.js.map",
+    "main.css": "/TeamWork-FrontEnd/static/css/main.958d87e3.chunk.css",
+    "main.js": "/TeamWork-FrontEnd/static/js/main.914466f0.chunk.js",
+    "main.js.map": "/TeamWork-FrontEnd/static/js/main.914466f0.chunk.js.map",
     "runtime-main.js": "/TeamWork-FrontEnd/static/js/runtime-main.5ec62393.js",
     "runtime-main.js.map": "/TeamWork-FrontEnd/static/js/runtime-main.5ec62393.js.map",
-    "static/js/2.d6e8c652.chunk.js": "/TeamWork-FrontEnd/static/js/2.d6e8c652.chunk.js",
-    "static/js/2.d6e8c652.chunk.js.map": "/TeamWork-FrontEnd/static/js/2.d6e8c652.chunk.js.map",
+    "static/js/2.3df9eded.chunk.js": "/TeamWork-FrontEnd/static/js/2.3df9eded.chunk.js",
+    "static/js/2.3df9eded.chunk.js.map": "/TeamWork-FrontEnd/static/js/2.3df9eded.chunk.js.map",
     "index.html": "/TeamWork-FrontEnd/index.html",
-    "precache-manifest.ca1381479086c1908a62ef0ee39930d4.js": "/TeamWork-FrontEnd/precache-manifest.ca1381479086c1908a62ef0ee39930d4.js",
+    "precache-manifest.1366a1005a702a4765a2ea37dc6f6600.js": "/TeamWork-FrontEnd/precache-manifest.1366a1005a702a4765a2ea37dc6f6600.js",
     "service-worker.js": "/TeamWork-FrontEnd/service-worker.js",
-    "static/css/main.073a8eee.chunk.css.map": "/TeamWork-FrontEnd/static/css/main.073a8eee.chunk.css.map",
-    "static/js/2.d6e8c652.chunk.js.LICENSE": "/TeamWork-FrontEnd/static/js/2.d6e8c652.chunk.js.LICENSE"
+    "static/css/main.958d87e3.chunk.css.map": "/TeamWork-FrontEnd/static/css/main.958d87e3.chunk.css.map",
+    "static/js/2.3df9eded.chunk.js.LICENSE": "/TeamWork-FrontEnd/static/js/2.3df9eded.chunk.js.LICENSE",
+    "static/media/SignIn.css": "/TeamWork-FrontEnd/static/media/background.d18e9ed7.png",
+    "static/media/logo11.png": "/TeamWork-FrontEnd/static/media/logo11.fb256850.png"
   },
   "entrypoints": [
     "static/js/runtime-main.5ec62393.js",
-    "static/js/2.d6e8c652.chunk.js",
-    "static/css/main.073a8eee.chunk.css",
-    "static/js/main.d488cdbb.chunk.js"
+    "static/js/2.3df9eded.chunk.js",
+    "static/css/main.958d87e3.chunk.css",
+    "static/js/main.914466f0.chunk.js"
   ]
 }
