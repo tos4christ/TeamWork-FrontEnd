@@ -57,7 +57,6 @@ class Employee extends React.Component {
     super(props)
     this.state = {
       employee: 'Oluwatosin Fetuga',
-      profile_pic: ls.get('profile_pic'),
       value: 0,
     }
   }
@@ -71,12 +70,7 @@ class Employee extends React.Component {
     const { value } = this.state; 
     return (
       <div>
-        <div>
-          <h1 className='rule dashhead'><span className='material-icons'>dashboard</span> Dashboard</h1>
-          <div className='employee-dashboard'>
-           <h3> Welcome {ls.get('userName')} </h3> 
-           <img src={this.state.profile_pic} className='pic' alt='profile pics' width="20" heigth="30"></img>
-           
+        <div>          
             <div className='rule dashboard'>
             <AppBar position="static" color="default">
               <Tabs
@@ -97,27 +91,8 @@ class Employee extends React.Component {
                 <Tab component={NavLink} label="Chat" to={`${this.props.match.url}/chat`} icon={<Forum />} {...a11yProps(6)} />
               </Tabs>
             </AppBar>
-     
-              {/* <TabPanel value={value} index={4}>
-                Item Five
-              </TabPanel>
-              <TabPanel value={value} index={5}>
-                Item Six
-              </TabPanel>
-              <TabPanel value={value} index={6}>
-                Item Seven
-              </TabPanel> */}
-
-              {/* <button><NavLink to={`${this.props.match.url}/profile`}> <i className='material-icons md-10'>edit</i> <i className='dashed'>Profile</i></NavLink></button>
-              <button><NavLink to={`${this.props.match.url}/gifs/get`}> <i className='material-icons md-10'>photo</i><i className='dashed'>Gifs</i></NavLink> </button>
-              <button><NavLink to={`${this.props.match.url}/articles/get`}><i className='material-icons md-10'>view_list</i><i className='dashed'>Articles</i></NavLink></button>
-              <button><NavLink to={`${this.props.match.url}/gifs`}><i className='material-icons md-10'>image</i><i className='dashed'>Post Gif</i></NavLink></button>
-              <button><NavLink to={`${this.props.match.url}/articles`}><i className='material-icons md-10'>add_box</i><i className='dashed'>Post Article</i></NavLink></button>
-              <button><NavLink to={`${this.props.match.url}/feed`}><i className='material-icons md-10'>forum</i><i className='dashed'>Feeds</i></NavLink> </button>
-              <button><NavLink to={`${this.props.match.url}/chat`}><i className='material-icons md-10'>message</i><i className='dashed'>Chat</i></NavLink> </button> */}
-          
             </div>
-          </div>
+          
           
           <div className='display'>  
           </div>

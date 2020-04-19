@@ -6,6 +6,9 @@
   background-color: lightgrey;
   height: auto;
 }
+.MuiTab-wrapper {
+  font-size: 1.5em;
+}
 .rightHead header {
   width: 100px;
   height: 200px;
@@ -56,15 +59,25 @@ a {
   color: #fff;
 }
 .homelogo {
-  width: 20px;
-  height: 20px;
-  margin: 0;
+  width: 70px;
+  height: 60px;
+  margin: 5px 0 0 60px;
   padding: 0;
+  border: transparent 0px #f5f5f5;
+  overflow: hidden;
 }
 /* ===================
   MEDIA QUERIES
 ======================= */
 @media only screen and (max-device-width: 768px) {
+  .homelogo {
+    width: 4em;
+    height: auto;
+    margin: 0.5em 0 0 1em;
+    padding: 0;
+    overflow: hidden;
+    border: transparent 0px #f5f5f5;
+  }
   .dashed {
     display: none;
   }

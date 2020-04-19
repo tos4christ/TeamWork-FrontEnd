@@ -2,8 +2,7 @@ import React from 'react';
 import {withRouter, Link} from 'react-router-dom';
 import './css/Home.css';
 
-class Home extends React.Component {
-  
+class Home extends React.Component {  
   render() {
     console.log(this.props.match.path)
     return (  

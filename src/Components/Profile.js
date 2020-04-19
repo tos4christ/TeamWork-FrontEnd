@@ -8,6 +8,7 @@ class Profile extends React.Component {
       start: this.getProfile(),
       profile: '',
       profilePic: '',
+      profile_pic: ls.get('profile_pic'),
     }
   }
   getProfile = () => {
@@ -53,6 +54,11 @@ class Profile extends React.Component {
     const user = ls.get('userDetails');
     return (
       <div className='profile'>
+        <h1 className='rule dashhead'><span className='material-icons'>dashboard</span> Dashboard</h1>
+          <div className='employee-dashboard'>
+           <h3> Welcome {ls.get('userName')} </h3> 
+           <img src={this.state.profile_pic} className='pic' alt='profile pics' width="20" heigth="30"></img>
+           </div>
         <h4>Profile</h4>
         <div>
           <p><strong>First Name:</strong>  {user.firstName} </p>

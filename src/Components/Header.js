@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink, Link, withRouter, Redirect} from 'react-router-dom';
+import './css/Header.css';
 import ls from 'local-storage';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -14,8 +15,60 @@ import ThumbDown from '@material-ui/icons/ThumbDown';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import logo from '../logo11.png';
+import logo from '../home.png';
+import { withStyles } from '@material-ui/core';
 
+const classes = {
+  root: {
+    padding: 0,
+    margin: 0,
+    color: '#45839f'
+  },
+  label: {
+    padding: 0,
+    margin: 0,
+  }
+}
+
+const StyledTabs = withStyles(theme => ({
+  indicator: {
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+    '& > div': {
+      maxWidth: 60,
+      width: '100%',
+      backgroundColor: '#635ee7',
+    },
+  },
+}))(props => <Tabs {...props} TabIndicatorProps={{children: <div />}} />);
+
+const StyledTab = withStyles(theme => ({
+  root: {
+    ...theme.typography.button,
+    textTransform: 'capitalized',
+    color: 'primary',
+    fontWeight: theme.typography.fontWeightRegular,
+    fontSize: theme.typography.pxToRem(15),
+    padding: '0px 0px',
+    '&:focus': {
+      opacity: 1,
+    },
+    '& > a': {
+      maxWidth: 20,
+      backgroundColor: '#635ee7',
+    },
+  },
+  labelIcon: {
+    maxWidth: 20,
+    backgroundColor: '#f5f5f5',
+  },
+  root: {
+    color: 'red',
+    margin: '0px 0px',
+    padding: '0px 0px',
+  }
+}))(props => <Tab classes={{root: classes.root}} disableRipple {...props} />);
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
   return (
@@ -48,7 +101,6 @@ class Header extends React.Component {
     super(props);
     this.state = {
       value: 0,
-      classes: ''
     }
   }
   handleChange = (event, newValue) => {
@@ -67,29 +119,30 @@ class Header extends React.Component {
     const { value } = this.state; 
     return (  
       <div style={{background: '#f5f5f5', display: 'flex'}}> 
-        <div style={{width: '40%', background: '#f5f5f5', overflow: 'hidden'}}>
-          <span><img className='homelogo' src={logo} style={{border: 'transparent 0px #f5f5f5', overflow: 'hidden', width: '100px', height: '70px', padding: '0', marginLeft: '60px'}} /> </span>        </div>
-        <div style={{width: '60%', overflow:'hidden'}}>
+        <div style={{width: '35%', background: '#f5f5f5', overflow: 'hidden'}}>
+          <span><img className='homelogo' src={logo} /> </span>        
+        </div>
+        <div style={{width: '65%', overflow:'hidden'}}>
       <AppBar position='static' color="default">
-        <Tabs
+        <StyledTabs
           value={value}
           onChange={this.handleChange}
           variant="scrollable"
-          scrollButtons="auto"
+          scrollButtons="on"
           indicatorColor="primary"
           textColor="primary"
-          aria-label="scrollable force tabs example"
+          aria-label="scrollable force tabs example" 
         >
            
-           <Tab style={{width: '1em', fontSize: '1em'}} component={NavLink} label="Games" to="#" icon={<Navigation />} {...a11yProps(0)} />
-           <Tab style={{width: '1em', fontSize: '1em'}} component={NavLink} label="Forums" to="#" icon={<ContactPhone />} {...a11yProps(1)} />
-           <Tab style={{width: '1em', fontSize: '1em'}} component={NavLink} label="About" to="#" icon={<HelpIcon />} {...a11yProps(2)} />
-           <Tab style={{width: '1em', fontSize: '1em'}} component={NavLink} label="Sign up" to="#" icon={<Navigation />} {...a11yProps(3)} />
-           <Tab style={{width: '1em', fontSize: '1em'}} component={NavLink} label={heading} to={route} icon={<PowerSettingsNewRounded />} {...a11yProps(4)}  />
+           <StyledTab component={NavLink} label="Games" to="#" icon={<Navigation />} {...a11yProps(0)} />
+           <StyledTab component={NavLink} label="Forums" to="#" icon={<ContactPhone />} {...a11yProps(1)} />
+           <StyledTab component={NavLink} label="About" to="#" icon={<HelpIcon />} {...a11yProps(2)} />
+           <StyledTab component={NavLink} label="Sign up" to="#" icon={<Navigation />} {...a11yProps(3)} />
+           <StyledTab component={NavLink} label={heading} to={route} icon={<PowerSettingsNewRounded />} {...a11yProps(4)}  />
           {/* <Tab label="Item Five" icon={<ShoppingBasket />} {...a11yProps(4)} />
           <Tab label="Item Six" icon={<ThumbDown />} {...a11yProps(5)} />
           <Tab label="Item Seven" icon={<ThumbUp />} {...a11yProps(6)} /> */}
-        </Tabs>
+        </StyledTabs>
       </AppBar>
       </div>
      
