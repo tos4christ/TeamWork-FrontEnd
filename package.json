@@ -8,8 +8,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@material-ui/core": "^4.8.3",
     "@material-ui/icons": "^4.5.1",
+    "bootstrap": "^4.4.1",
     "gh-pages": "^2.1.1",
+    "jquery": "^3.5.0",
     "local-storage": "^2.0.0",
+    "popper": "^1.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router": "^5.1.2",
@@ -19,6 +22,7 @@
     "uws": "^100.0.1"
   },
   "scripts": {
+    "sassy": "sass --watch scss:src/components/css",
     "start": "react-scripts start",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
