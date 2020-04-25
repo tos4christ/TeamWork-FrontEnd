@@ -1,16 +1,18 @@
+/**
 img {
   width: 200px;
   height: 200px;
-  /** animation: rotation 10s infinite linear; **/
-}
-@keyframes rotation {
+  animation: rotation 10s infinite linear; 
+} 
+**/
+/* @keyframes rotation {
     from {
       transform: rotate(0deg);
     }
     to {
       transform: rotate(359deg);
     }
-}
+} */
 .signinBody {
   background: url('../../background.png') repeat fixed;
 }
@@ -96,79 +98,6 @@ label span {
   MEDIA QUERIES
 ======================= */
 @media only screen and (max-device-width: 768px) {
-  .signinForm {
-    margin-left: 10em;
-    margin-top: 4em;
-    background: white;
-    margin-right: 10em;
-  }
-  .signInput {
-    width: 50%;
-  }
-  .inputDiv {
-    margin: 10px;
-  }
-  h2, h3, h4 {
-    font-size: 1em;
-  }
-  h1 {
-    font-size: 1.5em;
-  }
-  span, i, a {
-    font-size: 1em;
-    padding: 0;
-  }
-  .rule button, .rule button a {
-    margin: 1px;
-    padding: 0;
-    width: 5px;
-    height: 25px;
-  }
-  .signinBody {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-  .signinBody form {
-    padding: 0;
-    margin: 20px 40px;
-    width: 80%;
-  }
-  .signinBody input {
-    margin: 10px;
-    padding: 5px;
-  }
-  h2 {
-    margin: 10px;
-    padding: 5px;
-    color: greenyellow;
-  }
-  input[type="radio"] {
-    padding: 0;
-    display: inline-flex;
-    margin-left: 15px;
-    font-size: small;
-  }
-  label {
-    display: flex;
-  }
-  label span {
-    margin: 10px 5px;
-  }
-  input[type="email"], input[type="password"] {
-    display: inline-block;
-    width: 30em;
-    color: rgb(155, 80, 151);
-    padding: 9px;
-  }
-  .signInput {
-    display: flex;
-    width: 90%;
-  }
-  .dashboard button {
-   width: 30%;
-  }
-  
   
 }
 @media (min-device-width: 769px) {

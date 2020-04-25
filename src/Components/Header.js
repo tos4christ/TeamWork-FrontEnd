@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink, Link, withRouter, Redirect} from 'react-router-dom';
 import './css/Header.css';
-import '../Components/css/style.css';
+import './css/style.css';
 import ls from 'local-storage';
 import logo from '../logo-home.png';
 
@@ -27,50 +27,33 @@ class Header extends React.Component {
     }
     const { value } = this.state; 
     return (  
-      <div className='section'> 
-      
+      <div className='section'>     
            <div className='container-fluid'>
-            <nav className='navbar navbar-expand-sm justify-content-right bg-light'>                
+            <nav className='navbar navbar-expand-sm justify-content-center bg-light border'>                
               <Link to='/api/v1/' className='navbar-brand'>
               <img className='homelogo'  src={logo} width="40" height="20" alt="site logo"/>
-              </Link>             
-              
-                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span> 
-                  <span className="icon-bar"></span>                      
-                </button>
-              
+              </Link>              
+              <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span className="icon-bar"></span>                    
+              </button>              
               <div className="collapse navbar-collapse" id="myNavbar">
-                <ul className="nav navbar-nav">
-                  <li> <NavLink to='/api/v1/feeds'>Latest News</NavLink></li>
-                  <li><NavLink to='/api/v1/articles'> Contact Admin </NavLink></li>
-                  <li><NavLink to='/api/v1/gifs'>Tour</NavLink></li>
-                  <li><NavLink to={route}>{heading}</NavLink></li>
+                <ul className="nav navbar-nav nav-bar">
+                  <li className='nav-item'> 
+                    <NavLink className='nav-link text-info' to='/api/v1/feeds'>Latest News  |</NavLink>
+                  </li>
+                  <li className='nav-item'>
+                    <NavLink className='nav-link text-info' to='/api/v1/articles'> Contact  |</NavLink>
+                  </li>
+                  <li className='nav-item'>
+                    <NavLink className='nav-link text-info' to='/api/v1/gifs'>Tour  |</NavLink>
+                  </li>
+                  <li className='nav-item'>
+                    <NavLink className='nav-link text-info' to={route}>{heading}</NavLink>
+                  </li>
                 </ul>
               </div>
             </nav>
-
-          </div>
-      
-
-
-
-        {/*
-           <StyledTab component={NavLink} label="Games" to="#" icon={<Navigation />} {...a11yProps(0)} />
-           <StyledTab component={NavLink} label="Forums" to="#" icon={<ContactPhone />} {...a11yProps(1)} />
-           <StyledTab component={NavLink} label="About" to="#" icon={<HelpIcon />} {...a11yProps(2)} />
-           <StyledTab component={NavLink} label="Sign up" to="#" icon={<Navigation />} {...a11yProps(3)} />
-           <StyledTab component={NavLink} label={heading} to={route} icon={<PowerSettingsNewRounded />} {...a11yProps(4)}  />
-          {/* <Tab label="Item Five" icon={<ShoppingBasket />} {...a11yProps(4)} />
-          <Tab label="Item Six" icon={<ThumbDown />} {...a11yProps(5)} />
-          <Tab label="Item Seven" icon={<ThumbUp />} {...a11yProps(6)} /> */}
-        {/* </StyledTabs>
-      </AppBar>
-      </div> */}
-     
-   
+          </div> 
     </div>      
     );
   }

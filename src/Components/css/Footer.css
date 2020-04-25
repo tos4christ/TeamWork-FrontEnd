@@ -11,31 +11,3 @@
 .dashed {
   color: whitesmoke;
 }
-
-@media only screen and (max-device-width: 768px) {
-  .searchBar {
-    width: 50%;
-    padding: 0;
-    height: 2em;
-    margin: auto;
-  }
-  .pic {
-    /* display: none; */
-    width: 6em;
-    height: 6em;
-    margin: 5px 70%;
-  }
-  .profile {
-    padding: 5px;
-  }
-  .material-icons .md-10 {
-    font-size: 2px;
-    margin: 0;
-    padding: 0;
-  }
-  .gifs .searchBar {
-    margin: 3px 10px;
-    height: 2em;
-  }
-
-}
