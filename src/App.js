@@ -5,7 +5,7 @@ import Header from './Components/Header';
 import Admin from './Components/Admin';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './Components/Home';
-import SignIn from './Components/SignInComponent';
+import SignIn from './Components/SigninComponent';
 import Employee from './Components/Employee';
 import SignOut from './Components/SignOut';
 
