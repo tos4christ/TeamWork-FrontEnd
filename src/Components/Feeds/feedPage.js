@@ -4,7 +4,6 @@ import Gif from '../Gifs/Gif';
 import ls from 'local-storage';
 import { TextField, List } from '@material-ui/core';
 
-
 class FeedPage extends React.Component {
   constructor(props) {
     super(props);
@@ -15,6 +14,7 @@ class FeedPage extends React.Component {
       filterText: '',
     }
   }
+  
   getFeeds = () => {
     const url = `https://teamworksng.herokuapp.com/api/v1/feed`;
     fetch(url, {
