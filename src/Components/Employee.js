@@ -6,7 +6,7 @@ import Articles from './Articles/Articles';
 import SingleArticle from './Articles/SingleArticle';
 import Gifs from './Gifs/Gifs';
 import SingleGif from './Gifs/SingleGif';
-import FeedPage from './Feeds/FeedPage';
+import FeedPage from './Feeds/feedPage';
 import ls from 'local-storage';
 import Profile from './Profile';
 import Chat from './Chat';
